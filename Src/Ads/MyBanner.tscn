@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjxne3w2g32lt"]
+
+[ext_resource type="Script" path="res://Src/Ads/MyBanner.gd" id="1_ig50w"]
+
+[node name="MyBanner" type="Node2D"]
+script = ExtResource("1_ig50w")

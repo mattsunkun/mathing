@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7rlnoodn4fpi"]
+
+[ext_resource type="Script" path="res://Src/Ads/MyInterstitial.gd" id="1_y5du2"]
+
+[node name="MyInterstitial" type="Node2D"]
+script = ExtResource("1_y5du2")

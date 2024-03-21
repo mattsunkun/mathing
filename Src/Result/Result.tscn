@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceqdi28l1rurv"]
+
+[ext_resource type="Script" path="res://Src/Result/Result.gd" id="1_m7mc5"]
+[ext_resource type="FontFile" uid="uid://oxlhyp0daugc" path="res://Assets/Fonts/HackGen35ConsoleNF-Regular.ttf" id="1_r3rhi"]
+[ext_resource type="AudioStream" uid="uid://dl1s2mr8uf6f8" path="res://Assets/Sounds/great.mp3" id="3_c8kl3"]
+[ext_resource type="AudioStream" uid="uid://ds75vx2pgkth1" path="res://Assets/Sounds/soso.mp3" id="4_mnlgd"]
+[ext_resource type="AudioStream" uid="uid://dycey42kqkc4l" path="res://Assets/Sounds/timeout.mp3" id="5_hgx24"]
+[ext_resource type="AudioStream" uid="uid://37itduefbdkr" path="res://Assets/Sounds/max.mp3" id="6_h3rk7"]
+
+[node name="Result" type="Node2D"]
+script = ExtResource("1_m7mc5")
+
+[node name="crBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+color = Color(0, 0, 100, 1)
+
+[node name="bRetry" type="Button" parent="."]
+offset_left = 25.0
+offset_top = 900.0
+offset_right = 425.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 100
+text = "Retry"
+
+[node name="bHome" type="Button" parent="."]
+offset_left = 475.0
+offset_top = 900.0
+offset_right = 875.0
+offset_bottom = 1025.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 100
+text = "Home"
+
+[node name="lScore" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 200.0
+offset_right = 875.0
+offset_bottom = 434.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 200
+text = "255/255"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lProblem" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 600.0
+offset_right = 850.0
+offset_bottom = 900.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 100
+text = "problem"
+horizontal_alignment = 1
+
+[node name="bContinue" type="Button" parent="."]
+offset_left = 25.0
+offset_top = 725.0
+offset_right = 875.0
+offset_bottom = 875.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 100
+text = "動画を見て再開"
+
+[node name="bAns0" type="Button" parent="."]
+offset_left = 50.0
+offset_top = 1100.0
+offset_right = 850.0
+offset_bottom = 1250.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 100
+text = "ans0"
+
+[node name="bAns1" type="Button" parent="."]
+offset_left = 50.0
+offset_top = 1275.0
+offset_right = 850.0
+offset_bottom = 1425.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 100
+text = "ans1"
+
+[node name="aspGreat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_c8kl3")
+
+[node name="aspSoSo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mnlgd")
+
+[node name="aspTimeout" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hgx24")
+
+[node name="lMessage" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 120.0
+offset_right = 850.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("1_r3rhi")
+theme_override_font_sizes/font_size = 50
+text = "Great Job!! 松本!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="aspMax" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_h3rk7")
+
+[connection signal="pressed" from="bRetry" to="." method="_on_b_retry_pressed"]
+[connection signal="pressed" from="bHome" to="." method="_on_b_home_pressed"]
+[connection signal="pressed" from="bContinue" to="." method="_on_b_continue_pressed"]

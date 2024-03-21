@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://q8aj6no76r2"]
+
+[ext_resource type="FontFile" uid="uid://oxlhyp0daugc" path="res://Assets/Fonts/HackGen35ConsoleNF-Regular.ttf" id="1_7f8ts"]
+
+[node name="Info" type="Node2D"]
+
+[node name="crBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[node name="bInfo" type="Button" parent="."]
+offset_left = 750.0
+offset_top = 25.0
+offset_right = 875.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("1_7f8ts")
+theme_override_font_sizes/font_size = 100
+text = "x"

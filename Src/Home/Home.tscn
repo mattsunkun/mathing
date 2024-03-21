@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=3 uid="uid://by2w6jyod0vty"]
+
+[ext_resource type="Script" path="res://Src/Home/Home.gd" id="1_jogjk"]
+[ext_resource type="FontFile" uid="uid://oxlhyp0daugc" path="res://Assets/Fonts/HackGen35ConsoleNF-Regular.ttf" id="2_6ulja"]
+[ext_resource type="AudioStream" uid="uid://cfjkvav7bbq6b" path="res://Assets/Sounds/ka.mp3" id="3_pbji2"]
+[ext_resource type="Script" path="res://Src/Home/n2Ad.gd" id="4_oyj0u"]
+[ext_resource type="Script" path="res://Src/Home/vbcAd.gd" id="4_qvdes"]
+[ext_resource type="PackedScene" uid="uid://cjxne3w2g32lt" path="res://Src/Ads/MyBanner.tscn" id="6_hpdx4"]
+
+[node name="Home" type="Node2D"]
+script = ExtResource("1_jogjk")
+
+[node name="crBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[node name="bBeginner" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 775.0
+offset_right = 750.0
+offset_bottom = 900.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 100
+text = "Beginner"
+
+[node name="bRegular" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 950.0
+offset_right = 750.0
+offset_bottom = 1075.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 100
+text = "Regular"
+
+[node name="bGrand" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 1125.0
+offset_right = 750.0
+offset_bottom = 1250.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 100
+text = "Grand"
+
+[node name="bImpossible" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 1300.0
+offset_right = 750.0
+offset_bottom = 1425.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 100
+text = "!possible"
+
+[node name="lTitle" type="Label" parent="."]
+offset_top = 321.0
+offset_right = 900.0
+offset_bottom = 721.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 160
+text = "けいさん
+ゲーム"
+horizontal_alignment = 1
+
+[node name="lbAboutCreater" type="LinkButton" parent="."]
+offset_left = 575.0
+offset_top = 25.0
+offset_right = 875.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 50
+text = "作者について"
+uri = "https://mattsun-kun-portfolio.vercel.app/"
+
+[node name="leUserName" type="LineEdit" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 550.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 50
+text = "㌶Ⅲ⑳㏾㈱髙﨑㌶Ⅲ⑳"
+placeholder_text = "おなまえ(10文字)"
+max_length = 10
+
+[node name="pSE" type="Panel" parent="."]
+offset_left = 25.0
+offset_top = 125.0
+offset_right = 425.0
+offset_bottom = 225.0
+
+[node name="aspCheck" type="AudioStreamPlayer" parent="pSE"]
+stream = ExtResource("3_pbji2")
+
+[node name="lMeta" type="Label" parent="pSE"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 110.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 80
+text = "SE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hsb" type="HScrollBar" parent="pSE"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 18.0
+scale = Vector2(10, 10)
+min_value = -30.0
+max_value = 5.0
+step = 0.1
+
+[node name="lNo" type="Label" parent="pSE"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -20.0
+offset_right = 73.0
+offset_bottom = 74.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 80
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lVersion" type="Label" parent="."]
+offset_left = 600.0
+offset_top = 100.0
+offset_right = 870.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("2_6ulja")
+theme_override_font_sizes/font_size = 30
+text = "バージョン：0.1.6"
+
+[node name="n2Ad" type="Node2D" parent="."]
+script = ExtResource("4_oyj0u")
+
+[node name="vbcAd" type="VBoxContainer" parent="."]
+offset_left = 187.0
+offset_top = 291.0
+offset_right = 687.0
+offset_bottom = 691.0
+script = ExtResource("4_qvdes")
+
+[node name="MyBanner" parent="." instance=ExtResource("6_hpdx4")]
+
+[connection signal="pressed" from="bBeginner" to="." method="_on_beginner_button_pressed"]
+[connection signal="pressed" from="bRegular" to="." method="_on_regular_button_pressed"]
+[connection signal="pressed" from="bGrand" to="." method="_on_grand_button_pressed"]
+[connection signal="pressed" from="bImpossible" to="." method="_on_impossible_button_pressed"]
+[connection signal="changed" from="pSE/hsb" to="." method="_on_hsb_se_changed"]
+[connection signal="scrolling" from="pSE/hsb" to="." method="_on_hsb_se_scrolling"]
+[connection signal="value_changed" from="pSE/hsb" to="." method="_on_hsb_value_changed"]

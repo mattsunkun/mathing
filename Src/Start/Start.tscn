@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://docktkd1p20vy"]
+
+[ext_resource type="Script" path="res://Src/Start/Start.gd" id="1_cvga2"]
+[ext_resource type="FontFile" uid="uid://oxlhyp0daugc" path="res://Assets/Fonts/HackGen35ConsoleNF-Regular.ttf" id="1_lcb5d"]
+[ext_resource type="AudioStream" uid="uid://biom2mdgxhii3" path="res://Assets/Sounds/countDown.mp3" id="3_18po0"]
+[ext_resource type="AudioStream" uid="uid://bxdfwaww2yuhm" path="res://Assets/Sounds/start.mp3" id="4_2svec"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_cvga2")
+
+[node name="crBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[node name="lTimeLeft" type="Label" parent="."]
+offset_top = 321.0
+offset_right = 900.0
+offset_bottom = 721.0
+theme_override_fonts/font = ExtResource("1_lcb5d")
+theme_override_font_sizes/font_size = 160
+text = "3"
+horizontal_alignment = 1
+
+[node name="tCountDown" type="Timer" parent="."]
+
+[node name="aspCountDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_18po0")
+
+[node name="aspStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2svec")

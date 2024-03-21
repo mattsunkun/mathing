@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbfplfrwpvp6y"]
+
+[ext_resource type="FontFile" uid="uid://oxlhyp0daugc" path="res://Assets/Fonts/HackGen35ConsoleNF-Regular.ttf" id="1_0rpw2"]
+[ext_resource type="Script" path="res://Src/Stage/Stage.gd" id="1_0strt"]
+[ext_resource type="AudioStream" uid="uid://cgpp8n5vym08p" path="res://Assets/Sounds/tick.mp3" id="3_tflk4"]
+[ext_resource type="AudioStream" uid="uid://cfi7fom31oj3d" path="res://Assets/Sounds/tick-fast.mp3" id="4_h3i48"]
+[ext_resource type="AudioStream" uid="uid://dwf70efp3w57f" path="res://Assets/Sounds/right.mp3" id="5_5q788"]
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_0strt")
+
+[node name="crBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(100, 100)
+color = Color(0, 0, 100, 1)
+
+[node name="lProblem" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 600.0
+offset_right = 850.0
+offset_bottom = 900.0
+theme_override_fonts/font = ExtResource("1_0rpw2")
+theme_override_font_sizes/font_size = 100
+text = "012345*012345"
+horizontal_alignment = 1
+
+[node name="bAns0" type="Button" parent="."]
+offset_left = 50.0
+offset_top = 1100.0
+offset_right = 850.0
+offset_bottom = 1250.0
+theme_override_fonts/font = ExtResource("1_0rpw2")
+theme_override_font_sizes/font_size = 100
+text = "0123456789012
+"
+
+[node name="lScore" type="Label" parent="."]
+offset_left = 425.0
+offset_top = 25.0
+offset_right = 875.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("1_0rpw2")
+theme_override_font_sizes/font_size = 100
+text = "255/255"
+horizontal_alignment = 2
+
+[node name="bAns1" type="Button" parent="."]
+offset_left = 50.0
+offset_top = 1275.0
+offset_right = 850.0
+offset_bottom = 1425.0
+theme_override_fonts/font = ExtResource("1_0rpw2")
+theme_override_font_sizes/font_size = 100
+text = "0123456789012
+"
+
+[node name="tLimit" type="Timer" parent="."]
+
+[node name="lTimeLeft" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 425.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("1_0rpw2")
+theme_override_font_sizes/font_size = 100
+text = "10.123"
+
+[node name="aspTick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tflk4")
+
+[node name="aspTickFast" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h3i48")
+
+[node name="aspRight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5q788")
+
+[connection signal="pressed" from="bAns0" to="." method="_on_b_ans_0_pressed"]
+[connection signal="pressed" from="bAns1" to="." method="_on_b_ans_1_pressed"]
+[connection signal="timeout" from="tLimit" to="." method="_on_timer_timeout"]
